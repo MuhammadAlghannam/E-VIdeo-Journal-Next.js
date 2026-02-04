@@ -1,0 +1,285 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme inline {
+  /* Border Radius System */
+  /* 8 */
+  --radius-sm: calc(var(--radius) - 2px);
+  /* 10 */
+  --radius-md: var(--radius);
+  /* 12 */
+  --radius-lg: calc(var(--radius) + 2px);
+  /* 14 */
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand extensions */
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-text-gray: var(--text-gray);
+  --color-text-gray-dark: var(--text-gray-dark);
+  --color-hover: var(--hover);
+
+  /* Font family */
+  --font-poppins: "Poppins", sans-serif;
+
+  /* Heading scale */
+  --text-h1-semibold: 48px;
+  --text-h1-semibold--font-weight: 600;
+
+  --text-40-semibold: 40px;
+  --text-40-semibold--font-weight: 600;
+
+  --text-h2-semibold: 36px;
+  --text-h2-semibold--font-weight: 600;
+
+  --text-h3-semibold: 32px;
+  --text-h3-semibold--font-weight: 600;
+
+  --text-h4-semibold: 24px;
+  --text-h4-semibold--font-weight: 600;
+
+  --text-h4-regular: 24px;
+  --text-h4-regular--font-weight: 400;
+
+  --text-h5-semibold: 20px;
+  --text-h5-semibold--font-weight: 600;
+
+  --text-h5-regular: 20px;
+  --text-h5--regular--font-weight: 400;
+
+  --text-h6-semibold: 18px;
+  --text-h6-semibold--font-weight: 600;
+
+  --text-h6-regular: 18px;
+  --text-h6--regular--font-weight: 400;
+
+  --text-h7-semibold: 16px;
+  --text-h7-semibold--font-weight: 600;
+
+  --text-h7-regular: 16px;
+  --text-h7-regular--font-weight: 400;
+
+  --text-h8-semibold: 14px;
+  --text-h8-semibold--font-weight: 600;
+
+  --text-h8-regular: 14px;
+  --text-h8-regular--font-weight: 400;
+
+  --text-h9-semibold: 12px;
+  --text-h9-semibold--font-weight: 600;
+
+  --text-h9-regular: 12px;
+  --text-h9-regular--font-weight: 400;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(from #ffffff l c h);
+  --foreground: oklch(from #111111 l c h);
+  --card: oklch(from #ffffff l c h);
+  --card-foreground: oklch(from #111111 l c h);
+  --popover: oklch(from #ffffff l c h);
+  --popover-foreground: oklch(from #111111 l c h);
+  /* Primary */
+  --primary: oklch(from #35758c l c h);
+  --primary-foreground: oklch(from #ffffff l c h);
+  /* Secondary */
+  --secondary: oklch(from #bbdfe6 l c h);
+  --secondary-foreground: oklch(from #2f5d6f l c h);
+  --muted: oklch(from #f5f5f5 l c h);
+  /* dark-text-gray */
+  --muted-foreground: oklch(from #7b7b7b l c h);
+  /* Hover */
+  --accent: oklch(from #2f5d6f l c h);
+  --accent-foreground: oklch(from #ffffff l c h);
+  /* Red */
+  --destructive: oklch(from #bb1313 l c h);
+  /* Border color */
+  --border: oklch(from #ededed l c h);
+  --input: oklch(from #ededed l c h);
+  /* Brand extensions */
+  --ring: oklch(from #bbdfe6 l c h);
+
+  /* Green */
+  --success: oklch(from #3f8f43 l c h);
+  /* Pending */
+  --warning: oklch(from #e0b610 l c h);
+  /* Text gray */
+  --text-gray: oklch(from #adadad l c h);
+  /* Dark text gray */
+  --text-gray-dark: oklch(from #7b7b7b l c h);
+  /* Hover */
+  --hover: oklch(from #2f5d6f l c h);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .container-1440 {
+    @apply mx-auto w-full max-w-[1440px] px-4 sm:px-6 lg:px-8;
+  }
+}
+
+@layer utilities {
+
+  /* Gradients */
+  .bg-gradient-1 {
+    background: linear-gradient(135deg, #0084d1 0%, #00786f 100%);
+  }
+
+  .bg-gradient-2 {
+    background: linear-gradient(96deg, #bbdfe6 24.17%, #0a7d93 106.2%);
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between;
+  }
+
+  /* hide scrollbar but keep scrolling */
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* IE/Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/WebKit */
+  }
+}
+
+.hero {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: fadeUp 0.8s ease-out forwards;
+  animation-delay: 0.5s;
+}
+
+.home-card {
+  transform: translateY(100%);
+  animation: slideup 0.7s ease-out forwards;
+}
+
+.home-card-0 {
+  animation-delay: 0.1s;
+}
+
+.home-card-1 {
+  animation-delay: 0.3s;
+}
+
+.home-card-2 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideup {
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @supports (color: color-mix(in lab, red, red)) {
+    .dark\:bg-input\/30 {
+      background: transparent;
+      color: black;
+    }
+  }
+}
+
+/* TipTab Text Editor */
+.ProseMirror {
+  @apply px-4 pt-2;
+  outline: none !important;
+}
+
+h1.tiptap-heading {
+  @apply mb-6 mt-8 text-4xl font-bold;
+}
+
+h2.tiptap-heading {
+  @apply mb-4 mt-6 text-3xl font-bold;
+}
+
+h3.tiptap-heading {
+  @apply mb-3 mt-4 text-xl font-bold;
+}
+
+h1.tiptap-heading:first-child,
+h2.tiptap-heading:first-child,
+h3.tiptap-heading:first-child {
+  margin-top: 0;
+}
+
+h1.tiptap-heading+h2.tiptap-heading,
+h1.tiptap-heading+h3.tiptap-heading,
+h2.tiptap-heading+h1.tiptap-heading,
+h2.tiptap-heading+h3.tiptap-heading,
+h3.tiptap-heading+h1.tiptap-heading,
+h3.tiptap-heading+h2.tiptap-heading {
+  margin-top: 0;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  @apply pointer-events-none float-left h-0 text-accent-foreground;
+  content: attr(data-placeholder);
+}
+
+.tiptap ul,
+.tiptap ol {
+  padding: 0 1rem;
+}
+
+.tiptap blockquote {
+  border-left: 3px solid var(--border);
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: var(--text-gray-dark);
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}

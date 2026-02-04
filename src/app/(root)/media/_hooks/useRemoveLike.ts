@@ -1,0 +1,26 @@
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { toast } from "sonner";
+import { RemoveCommentLike } from "../_actions/remove-comment-like";
+
+export default function useCommentLike() {
+  const queryClient = useQueryClient()
+
+  // Mutation
+  const { isPending, error, mutate } = useMutation({
+    mutationFn: async ({ commentId, userId }: { commentId: string | number; userId: string | number }) => {
+      return await RemoveCommentLike(commentId, userId);
+    },
+    // Handle Success
+    onSuccess() {
+      queryClient.invalidateQueries({
+        queryKey: ['comments']
+      })
+    },
+    onError: (error: unknown) => {
+      const message = error instanceof Error ? error.message : "Error removing like";
+      toast.error(message);
+    },
+  });
+
+  return { error, commentLike: mutate, isPending };
+}

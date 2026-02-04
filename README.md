@@ -118,9 +118,3 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
----
-
-## License
-
-This demo repository is for portfolio and demonstration purposes.  
-For licensing of the full HIS (Hypospadias E-Video Journal) project, please refer to the project owners.

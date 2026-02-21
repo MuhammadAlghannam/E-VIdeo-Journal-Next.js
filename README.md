@@ -1,4 +1,4 @@
-# HIS — Hypospadias E-Video Journal — Demo Repository
+# HIS — Hypospadias E-Video Journal
 
 <div align="center">
 
@@ -13,7 +13,7 @@
 
 ---
 
-## Demo repository notice
+## Repository notice
 
 This repository is a **demo version** of the HIS (Hypospadias E-Video Journal) project, published for portfolio and demonstration purposes.
 
